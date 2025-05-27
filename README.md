@@ -26,10 +26,23 @@
 - ![image](https://github.com/user-attachments/assets/8be11782-751f-4934-ac37-57930fbbc1f3)
 
 ## 데이터분석 프로그래밍(4-5명 팀 과제)
-- 과제1: 동일 데이터 분석: 타이타닉호 데이터 분석(seaborn 데이터)
-- 과제2: 지유 데이터 분석: 공공 데이터 분석
-- 5월 중순(11주 또는 12주 정도)에 수업에서 주피터노트북(발표 내용과 코드)으로 발표(발표시간은 약 10~15분) 
+- 과제1: 지정 데이터(titanic1309.csv) 분석: 타이타닉호 데이터 분석
+- 과제2: 자유 데이터 분석: 공공 데이터 분석 선택
+- B반 5/28(수), A반 6/2(월) 수업에서 발표
+  - 주피터노트북(발표 내용과 코드)으로 발표(발표시간은 약 10~15분)
+- 다음 데이터 공모전에 참가하는 방향으로 자유 데이터 활용
+  - [교통데이터 공모전](https://www.bigdata-transportation.kr/pageant/dashboard/CMPE_000000000020041)
 
+## 가로로 데이터프레임 출력 함수
+```Python
+from IPython.display import display_html
+def display_side_by_side(*args):
+    """여러 데이터프레임 비교가 쉽게 옆쪽으로 표시한다"""
+    html_str=''
+    for df in args:
+        html_str += df.to_html() + '&nbsp;'*4
+    display_html(html_str.replace('table','table style="display:inline"'), raw=True)
+```
 ## Google Colab 셀 복사 및 붙여넣기 단축키
 
 - 🔹 셀 복사 & 붙여넣기 단축키
